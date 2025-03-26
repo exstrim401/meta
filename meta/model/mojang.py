@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import Optional, List, Dict, Any, Iterator
+from .enum import StrEnum
 
 from pydantic import validator, Field
 
@@ -7,7 +8,6 @@ from . import (
     MetaBase,
     MojangArtifactBase,
     MojangAssets,
-    MojangLibrary,
     MojangArtifact,
     MojangLibraryDownloads,
     Library,
@@ -18,7 +18,11 @@ from . import (
 SUPPORTED_LAUNCHER_VERSION = 21
 SUPPORTED_COMPLIANCE_LEVEL = 1
 DEFAULT_JAVA_MAJOR = 8  # By default, we should recommend Java 8 if we don't know better
+DEFAULT_JAVA_NAME = (
+    "jre-legacy"  # By default, we should recommend Java 8 if we don't know better
+)
 COMPATIBLE_JAVA_MAPPINGS = {16: [17]}
+SUPPORTED_FEATURES = ["is_quick_play_multiplayer", "is_quick_play_singleplayer"]
 
 """
 Mojang index files look like this:
@@ -137,8 +141,6 @@ class LegacyOverrideEntry(MetaBase):
         if legacy:
             # remove all libraries - they are not needed for legacy
             meta_version.libraries = None
-            # remove minecraft arguments - we use our own hardcoded ones
-            meta_version.minecraft_arguments = None
 
 
 class LegacyOverrideIndex(MetaBase):
@@ -165,6 +167,16 @@ class LibraryPatches(MetaBase):
         return self.__root__[item]
 
 
+class LegacyServices(MetaBase):
+    __root__: List[str]
+
+    def __iter__(self) -> Iterator[str]:
+        return iter(self.__root__)
+
+    def __getitem__(self, item) -> str:
+        return self.__root__[item]
+
+
 class MojangArguments(MetaBase):
     game: Optional[List[Any]]  # mixture of strings and objects
     jvm: Optional[List[Any]]
@@ -185,9 +197,72 @@ class MojangLogging(MetaBase):
     type: str
 
 
+class MojangJavaComponent(StrEnum):
+    JreLegacy = "jre-legacy"
+    Alpha = "java-runtime-alpha"
+    Beta = "java-runtime-beta"
+    Gamma = "java-runtime-gamma"
+    GammaSnapshot = "java-runtime-gamma-snapshot"
+    Exe = "minecraft-java-exe"
+    Delta = "java-runtime-delta"
+
+
 class JavaVersion(MetaBase):
-    component: str = "jre-legacy"
+    component: MojangJavaComponent = MojangJavaComponent.JreLegacy
     major_version: int = Field(8, alias="majorVersion")
+
+
+class MojangJavaIndexAvailability(MetaBase):
+    group: int
+    progress: int
+
+
+class MojangJavaIndexManifest(MetaBase):
+    sha1: str
+    size: int
+    url: str
+
+
+class MojangJavaIndexVersion(MetaBase):
+    name: str
+    released: datetime
+
+
+class MojangJavaRuntime(MetaBase):
+    availability: MojangJavaIndexAvailability
+    manifest: MojangJavaIndexManifest
+    version: MojangJavaIndexVersion
+
+
+class MojangJavaIndexEntry(MetaBase):
+    __root__: dict[MojangJavaComponent, list[MojangJavaRuntime]]
+
+    def __iter__(self) -> Iterator[MojangJavaComponent]:
+        return iter(self.__root__)
+
+    def __getitem__(self, item) -> list[MojangJavaRuntime]:
+        return self.__root__[item]
+
+
+class MojangJavaOsName(StrEnum):
+    Gamecore = "gamecore"
+    Linux = "linux"
+    Linuxi386 = "linux-i386"
+    MacOs = "mac-os"
+    MacOSArm64 = "mac-os-arm64"
+    WindowsArm64 = "windows-arm64"
+    WindowsX64 = "windows-x64"
+    WindowsX86 = "windows-x86"
+
+
+class JavaIndex(MetaBase):
+    __root__: dict[MojangJavaOsName, MojangJavaIndexEntry]
+
+    def __iter__(self) -> Iterator[MojangJavaOsName]:
+        return iter(self.__root__)
+
+    def __getitem__(self, item) -> MojangJavaIndexEntry:
+        return self.__root__[item]
 
 
 class MojangVersion(MetaBase):
@@ -206,7 +281,7 @@ class MojangVersion(MetaBase):
     asset_index: Optional[MojangAssets] = Field(alias="assetIndex")
     assets: Optional[str]
     downloads: Optional[Dict[str, MojangArtifactBase]]  # TODO improve this?
-    libraries: Optional[List[MojangLibrary]]  # TODO: optional?
+    libraries: Optional[List[Library]]  # TODO: optional?
     main_class: Optional[str] = Field(alias="mainClass")
     applet_class: Optional[str] = Field(alias="appletClass")
     processArguments: Optional[str]
@@ -248,10 +323,12 @@ class MojangVersion(MetaBase):
             raise Exception(f"Unsupported compliance level {self.compliance_level}")
 
         major = DEFAULT_JAVA_MAJOR
+        javaName = DEFAULT_JAVA_NAME
         if (
             self.javaVersion is not None
         ):  # some versions don't have this. TODO: maybe maintain manual overrides
             major = self.javaVersion.major_version
+            javaName = self.javaVersion.component
 
         compatible_java_majors = [major]
         if (
@@ -273,6 +350,7 @@ class MojangVersion(MetaBase):
             release_time=self.release_time,
             type=new_type,
             compatible_java_majors=compatible_java_majors,
+            compatible_java_name=javaName,
             additional_traits=addn_traits,
             main_jar=main_jar,
         )
