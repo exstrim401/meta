@@ -257,7 +257,9 @@ class OSRule(MetaBase):
             "osx-arm64",
             "linux-arm64",
             "linux-arm32",
-            "haiku"
+            "haiku",
+            "haiku-x64",
+            "haiku-x86"
         ]
         return v
 
