@@ -63,9 +63,7 @@
   },
   {
     "_comment": "Add missing tinyfd to the broken LWJGL 3.2.2 variant",
-    "match": [
-      "org.lwjgl:lwjgl:3.2.2"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.2.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -114,9 +112,7 @@
   },
   {
     "_comment": "Add additional library just for osx-arm64. No override needed",
-    "match": [
-      "ca.weblite:java-objc-bridge:1.0.0"
-    ],
+    "match": ["ca.weblite:java-objc-bridge:1.0.0"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -140,9 +136,7 @@
   },
   {
     "_comment": "Add additional classifiers for jinput-platform",
-    "match": [
-      "net.java.jinput:jinput-platform:2.0.5"
-    ],
+    "match": ["net.java.jinput:jinput-platform:2.0.5"],
     "override": {
       "downloads": {
         "classifiers": {
@@ -387,7 +381,7 @@
     }
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl-glfw:3.3.1",
       "org.lwjgl:lwjgl-glfw:3.2.2",
@@ -522,21 +516,19 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "e42369eff88e5afd3e641e26f73730f9f9e4e31e",
-            "size": 130034,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-glfw/lwjgl-glfw.jar"
+            "sha1": "e2a4de660ba8885851c51943c39ef9a3030b9812",
+            "size": 138570,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-glfw/lwjgl-glfw.jar"
           },
-          "classifiers": {
-          }
+          "classifiers": {}
         },
-        "name": "org.lwjgl:lwjgl-glfw:3.3.2-haiku.1",
-        "natives": {
-        },
+        "name": "org.lwjgl:lwjgl-glfw:3.3.6-haiku.1",
+        "natives": {},
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -590,7 +582,46 @@
     ]
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "e2a4de660ba8885851c51943c39ef9a3030b9812",
+            "size": 138570,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-glfw/lwjgl-glfw.jar"
+          },
+          "classifiers": {}
+        },
+        "name": "org.lwjgl:lwjgl-glfw:3.3.6-haiku.1",
+        "natives": {},
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl-jemalloc:3.2.2",
       "org.lwjgl:lwjgl-jemalloc:3.2.1",
@@ -905,21 +936,19 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "629e0fdf84d2159426ebfd12449b15fa3109542a",
-            "size": 102462,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-openal/lwjgl-openal.jar"
+            "sha1": "e2a96e50fe734b2dd41122c0877a354f0fda2e0b",
+            "size": 145371,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-openal/lwjgl-openal.jar"
           },
-          "classifiers": {
-          }
+          "classifiers": {}
         },
-        "name": "org.lwjgl:lwjgl-openal:3.3.2-haiku.1",
-        "natives": {
-        },
+        "name": "org.lwjgl:lwjgl-openal:3.3.6-haiku.1",
+        "natives": {},
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -973,7 +1002,46 @@
     ]
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl-openal:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "e2a96e50fe734b2dd41122c0877a354f0fda2e0b",
+            "size": 145371,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-openal/lwjgl-openal.jar"
+          },
+          "classifiers": {}
+        },
+        "name": "org.lwjgl:lwjgl-openal:3.3.6-haiku.1",
+        "natives": {},
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl-opengl:3.3.1",
       "org.lwjgl:lwjgl-opengl:3.2.2",
@@ -1087,7 +1155,7 @@
           "classifiers": {
             "natives-linux-arm32": {
               "sha1": "3af5599c74dd76dd8dbb567b3f9b4963a6abeed5",
-              "size": 56388,						
+              "size": 56388,
               "url": "https://github.com/theofficialgman/lwjgl3-binaries-arm32/raw/lwjgl-3.2.2/lwjgl-opengl-natives-linux-arm32.jar"
             }
           }
@@ -1108,17 +1176,17 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "a6ecd44ae669085f8b15b074ce49afcffa984327",
-            "size": 930868,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
+            "sha1": "af3fd78017d43bee0cb350a25f6e32f1d5010292",
+            "size": 934759,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
           }
         },
-        "name": "org.lwjgl:lwjgl-opengl:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1126,27 +1194,27 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "a6ecd44ae669085f8b15b074ce49afcffa984327",
-            "size": 930868,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
+            "sha1": "af3fd78017d43bee0cb350a25f6e32f1d5010292",
+            "size": 934759,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
           },
           "classifiers": {
             "natives-haiku": {
-              "sha1": "a1ee3d3f73273d96b276d84f9a8e66f3dd887666",
-              "size": 73796,						
-              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-opengl/lwjgl-opengl-natives-haiku.jar"
+              "sha1": "05793c2569a009a21ac20803f216aa29969ad15d",
+              "size": 73717,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl-natives-haiku.jar"
             }
           }
         },
-        "name": "org.lwjgl:lwjgl-opengl:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku"
+          "haiku": "natives-haiku-x64"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1200,7 +1268,72 @@
     ]
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "af3fd78017d43bee0cb350a25f6e32f1d5010292",
+            "size": 934759,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
+          }
+        },
+        "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      },
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "af3fd78017d43bee0cb350a25f6e32f1d5010292",
+            "size": 934759,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl.jar"
+          },
+          "classifiers": {
+            "natives-haiku": {
+              "sha1": "05793c2569a009a21ac20803f216aa29969ad15d",
+              "size": 73717,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-opengl/lwjgl-opengl-natives-haiku.jar"
+            }
+          }
+        },
+        "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
+        "natives": {
+          "haiku": "natives-haiku-x64"
+        },
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl-stb:3.3.1",
       "org.lwjgl:lwjgl-stb:3.2.2",
@@ -1335,17 +1468,17 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "c94ab27eed27fbe6c8e08f5d15fd0be9abafc6b7",
-            "size": 114138,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
+            "sha1": "3b0ce420e3d8e1235f86bf1eff9387f7a1ba863f",
+            "size": 137842,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
           }
         },
-        "name": "org.lwjgl:lwjgl-stb:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1353,27 +1486,27 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "c94ab27eed27fbe6c8e08f5d15fd0be9abafc6b7",
-            "size": 114138,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
+            "sha1": "3b0ce420e3d8e1235f86bf1eff9387f7a1ba863f",
+            "size": 137842,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
           },
           "classifiers": {
             "natives-haiku": {
-              "sha1": "9c1c936a54ad77c79157e3d0eb2c8676481b5dcd",
-              "size": 217971,
-              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-stb/lwjgl-stb-natives-haiku.jar"
+              "sha1": "5871b2dc839922d367db9d1372d6edea10c6b5a9",
+              "size": 291103,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb-natives-haiku.jar"
             }
           }
         },
-        "name": "org.lwjgl:lwjgl-stb:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku"
+          "haiku": "natives-haiku-x64"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1427,7 +1560,72 @@
     ]
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl-stb:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "3b0ce420e3d8e1235f86bf1eff9387f7a1ba863f",
+            "size": 137842,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
+          }
+        },
+        "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      },
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "3b0ce420e3d8e1235f86bf1eff9387f7a1ba863f",
+            "size": 137842,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb.jar"
+          },
+          "classifiers": {
+            "natives-haiku": {
+              "sha1": "5871b2dc839922d367db9d1372d6edea10c6b5a9",
+              "size": 291103,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-stb/lwjgl-stb-natives-haiku.jar"
+            }
+          }
+        },
+        "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
+        "natives": {
+          "haiku": "natives-haiku-x64"
+        },
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl-tinyfd:3.3.1",
       "org.lwjgl:lwjgl-tinyfd:3.2.2",
@@ -1562,17 +1760,17 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "53bffe7aa51518b9e3bb6eecdbb0b76fc3b26f88",
-            "size": 7688,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
+            "sha1": "1a433beeff0220d1ccb8b1f0aeaf76ea22d5a593",
+            "size": 7740,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
           }
         },
-        "name": "org.lwjgl:lwjgl-tinyfd:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1580,27 +1778,27 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "53bffe7aa51518b9e3bb6eecdbb0b76fc3b26f88",
-            "size": 7688,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
+            "sha1": "1a433beeff0220d1ccb8b1f0aeaf76ea22d5a593",
+            "size": 7740,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
           },
           "classifiers": {
             "natives-haiku": {
-              "sha1": "1e2ef41e0ddd39ccb0804cb383a3423dc5866963",
-              "size": 42647,
-              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd-natives-haiku.jar"
+              "sha1": "7ea256ce4bced27d759474202f6df34158f04e7c",
+              "size": 42733,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd-natives-haiku.jar"
             }
           }
         },
-        "name": "org.lwjgl:lwjgl-tinyfd:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku"
+          "haiku": "natives-haiku-x64"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1654,7 +1852,72 @@
     ]
   },
   {
-    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, and linux-arm32",
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "1a433beeff0220d1ccb8b1f0aeaf76ea22d5a593",
+            "size": 7740,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
+          }
+        },
+        "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      },
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "1a433beeff0220d1ccb8b1f0aeaf76ea22d5a593",
+            "size": 7740,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd.jar"
+          },
+          "classifiers": {
+            "natives-haiku": {
+              "sha1": "7ea256ce4bced27d759474202f6df34158f04e7c",
+              "size": 42733,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl-tinyfd/lwjgl-tinyfd-natives-haiku.jar"
+            }
+          }
+        },
+        "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
+        "natives": {
+          "haiku": "natives-haiku-x64"
+        },
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_comment": "Use a newer patched version on osx-arm64, linux-arm64, linux-arm32 and haiku",
     "match": [
       "org.lwjgl:lwjgl:3.3.1",
       "org.lwjgl:lwjgl:3.2.2",
@@ -1789,17 +2052,17 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "ed39abe649193abbba295b3ee3aa5e0d477ebf6b",
-            "size": 851481,
+            "sha1": "e83a8262e1b0165c5b1156a42e14eeaf89097525",
+            "size": 890100,
             "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl/lwjgl.jar"
           }
         },
-        "name": "org.lwjgl:lwjgl:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1807,27 +2070,27 @@
       {
         "downloads": {
           "artifact": {
-            "sha1": "ed39abe649193abbba295b3ee3aa5e0d477ebf6b",
-            "size": 851481,
-            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl/lwjgl.jar"
+            "sha1": "e83a8262e1b0165c5b1156a42e14eeaf89097525",
+            "size": 890100,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl/lwjgl.jar"
           },
           "classifiers": {
             "natives-haiku": {
-              "sha1": "2b6af11ea831535a09dfc6152c2d6f0482a140e1",
-              "size": 100010,
-              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl/lwjgl-natives-haiku.jar"
+              "sha1": "6f4714bb497ac7949d0e77f13a4383a942294967",
+              "size": 78179,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl/lwjgl-natives-haiku.jar"
             }
           }
         },
-        "name": "org.lwjgl:lwjgl:3.3.2-haiku.1",
+        "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku"
+          "haiku": "natives-haiku-x64"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku"
+              "name": "haiku-x64"
             }
           }
         ]
@@ -1881,6 +2144,71 @@
     ]
   },
   {
+    "_comment": "Use a newer patched version on haiku",
+    "match": ["org.lwjgl:lwjgl:3.3.3"],
+    "override": {
+      "rules": [
+        {
+          "action": "allow"
+        },
+        {
+          "action": "disallow",
+          "os": {
+            "name": "haiku"
+          }
+        }
+      ]
+    },
+    "additionalLibraries": [
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "e83a8262e1b0165c5b1156a42e14eeaf89097525",
+            "size": 890100,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.2-haiku-x64/lwjgl/lwjgl.jar"
+          }
+        },
+        "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      },
+      {
+        "downloads": {
+          "artifact": {
+            "sha1": "e83a8262e1b0165c5b1156a42e14eeaf89097525",
+            "size": 890100,
+            "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl/lwjgl.jar"
+          },
+          "classifiers": {
+            "natives-haiku": {
+              "sha1": "6f4714bb497ac7949d0e77f13a4383a942294967",
+              "size": 78179,
+              "url": "https://haikuware.ru/files/lwjgl3/lwjgl-3.3.6-haiku-x64/lwjgl/lwjgl-natives-haiku.jar"
+            }
+          }
+        },
+        "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
+        "natives": {
+          "haiku": "natives-haiku-x64"
+        },
+        "rules": [
+          {
+            "action": "allow",
+            "os": {
+              "name": "haiku-x64"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     "_comment": "Only allow osx-arm64 for existing LWJGL 3.3.1",
     "match": [
       "org.lwjgl:lwjgl-glfw-natives-macos-arm64:3.3.1",
@@ -1904,9 +2232,7 @@
   },
   {
     "_comment": "Only allow osx-arm64 for existing java-objc-bridge:1.1",
-    "match": [
-      "ca.weblite:java-objc-bridge:1.1"
-    ],
+    "match": ["ca.weblite:java-objc-bridge:1.1"],
     "override": {
       "rules": [
         {
@@ -1942,9 +2268,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -1968,9 +2292,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -1994,9 +2316,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2020,9 +2340,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2046,9 +2364,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2072,9 +2388,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2098,9 +2412,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2124,9 +2436,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2150,9 +2460,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2176,9 +2484,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2202,9 +2508,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2228,9 +2532,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2254,9 +2556,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2280,9 +2580,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.1",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.1"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2306,9 +2604,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-freetype:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-freetype:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2332,9 +2628,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2358,9 +2652,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2384,9 +2676,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2410,9 +2700,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2436,9 +2724,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2462,9 +2748,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2488,9 +2772,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2514,9 +2796,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-freetype:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-freetype:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2540,9 +2820,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2566,9 +2844,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2592,9 +2868,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2618,9 +2892,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2644,9 +2916,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2670,9 +2940,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2696,9 +2964,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.2",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.2"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.2"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2722,9 +2988,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-freetype:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-freetype:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2748,9 +3012,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2774,9 +3036,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2800,9 +3060,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2826,9 +3084,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2852,9 +3108,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2878,9 +3132,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2904,9 +3156,7 @@
   },
   {
     "_comment": "Add linux-arm64 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2930,9 +3180,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-freetype:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-freetype:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2956,9 +3204,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-glfw:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -2982,9 +3228,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-jemalloc:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-jemalloc:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3008,9 +3252,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-openal:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-openal:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3034,9 +3276,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-opengl:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-opengl:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3060,9 +3300,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-stb:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-stb:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3086,9 +3324,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl-tinyfd:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl-tinyfd:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3112,9 +3348,7 @@
   },
   {
     "_comment": "Add linux-arm32 support for LWJGL 3.3.3",
-    "match": [
-      "org.lwjgl:lwjgl:3.3.3"
-    ],
+    "match": ["org.lwjgl:lwjgl:3.3.3"],
     "additionalLibraries": [
       {
         "downloads": {
@@ -3138,9 +3372,7 @@
   },
   {
     "_comment": "Replace glfw from 3.3.1 with version from 3.3.2 to prevent stack smashing",
-    "match": [
-      "org.lwjgl:lwjgl-glfw-natives-linux:3.3.1"
-    ],
+    "match": ["org.lwjgl:lwjgl-glfw-natives-linux:3.3.1"],
     "override": {
       "downloads": {
         "artifact": {
