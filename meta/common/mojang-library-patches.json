@@ -528,7 +528,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -613,7 +613,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -948,7 +948,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1033,7 +1033,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1186,7 +1186,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1208,13 +1208,13 @@
         },
         "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1297,7 +1297,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1319,13 +1319,13 @@
         },
         "name": "org.lwjgl:lwjgl-opengl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1478,7 +1478,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1500,13 +1500,13 @@
         },
         "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1589,7 +1589,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1611,13 +1611,13 @@
         },
         "name": "org.lwjgl:lwjgl-stb:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1770,7 +1770,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1792,13 +1792,13 @@
         },
         "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1881,7 +1881,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -1903,13 +1903,13 @@
         },
         "name": "org.lwjgl:lwjgl-tinyfd:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -2062,7 +2062,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -2084,13 +2084,13 @@
         },
         "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -2173,7 +2173,7 @@
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
@@ -2195,13 +2195,13 @@
         },
         "name": "org.lwjgl:lwjgl:3.3.6-haiku.1",
         "natives": {
-          "haiku": "natives-haiku-x64"
+          "haiku": "natives-haiku"
         },
         "rules": [
           {
             "action": "allow",
             "os": {
-              "name": "haiku-x64"
+              "name": "haiku"
             }
           }
         ]
